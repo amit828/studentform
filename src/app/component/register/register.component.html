@@ -1,0 +1,87 @@
+<div class="container">
+<form [formGroup]="registerForm"  border-dark>
+    <div class="row">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-3">Register</span>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname" formControlName="firstName">
+            <!-- <div class="form-text text-danger" *ngIf="FirstName.errors?.['required'] && FirstName.touched">First Name is Required</div> -->
+
+        </div>
+        <div class="col">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" formControlName="lastName">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" formControlName="email">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label for="mobile" class="form-label">Mobile</label>
+            <input type="text" class="form-control" id="mobile" formControlName="mobile">
+
+        </div>
+
+        <div class="col ps-3 mb-1">
+            <div class="m-2">Gender</div>
+            <div class="form-check form-check-inline">
+                <input type="radio" name="gender" value="m" id="male" class="form-check-input" formControlName="gender">
+                <label for="male" class="form-check-label" class="form-check-label">Male</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input type="radio" name="gender" value="f" id="female" class="form-check-input"
+                    formControlName="gender">
+                <label for="female" class="form-check-label">Female</label>
+            </div>
+        </div>
+        <!-- <div>
+            <input type="file" formControlName="imageFile"  (change)="onFileSelect($event)">
+          </div> -->
+
+        <div class="row">
+            <div class="col">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+
+            </div>
+            <!-- <div class="col">
+                    <label for="rpassword" class="form-label" >Repeat Password</label>
+                    <input type="password" class="form-control" id="rpassword" formControlName="rpassword">
+        
+                </div> -->
+        </div>
+
+        <div *ngIf="successMessage" class="error-message">
+            {{ successMessage }}
+          </div>
+        <div class="row">
+            <div class="submit">
+                <div *ngIf="isEdit; else elseBlock">
+                <button class="btn btn-primary" type="submit" (click)="onUpdate()" [disabled]="!registerForm.valid">Update</button>
+                </div>
+                <ng-template #elseBlock><button class="btn btn-primary" type="submit" (click)="onSubmit()" >Submit</button> </ng-template>
+                <button class="btn btn-primary" routerLink="/data"> View Data </button>
+                
+            </div>
+        </div>
+        <!-- <button class="btn btn-primary" routerLink="/data"> View Data </button> -->
+        <router-outlet></router-outlet>
+
+    </div> 
+</form>
+</div>

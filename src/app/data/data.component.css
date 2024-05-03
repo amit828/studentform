@@ -1,0 +1,38 @@
+.centered {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;  
+    gap: 15%;
+    position: relative;
+    margin: 3%;
+    /* border: 1px solid #ccc; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+img {
+    margin: 30px;
+}
+
+p{
+    margin: -4px;
+}
+
+
+  .btn
+  {
+    width: 30%;
+  }
+  .button
+  {
+    display: flex;
+    justify-content: space-between;
+  }

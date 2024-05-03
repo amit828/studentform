@@ -1,0 +1,19 @@
+<div class="centered">
+<div  *ngFor="let item of data">        
+        <div class="card">
+            <!-- <img mat-card-image [src]="item.imageSrc" width="200" height="200" alt="Photo of a Shiba Inu"> -->
+            <p> FirstName : {{ item.firstName}}</p><br>
+            <p> LastName : {{ item.lastName }}</p><br>
+            <p> Email : {{ item.email}}</p><br>
+            <p> Mobile : {{ item.mobile}}</p><br>
+            <p> Gender : {{ item.gender}}</p><br>
+            <div class="button">
+                <button class="btn btn-primary" (click)="navigateToForm(item._id)">Edit</button>
+            <button class="btn btn-primary" (click)="deleteStudentById(item._id)">Delete</button>
+            </div>
+            
+            
+        </div>
+</div>
+</div>
+<!-- <router-outlet></router-outlet> -->
